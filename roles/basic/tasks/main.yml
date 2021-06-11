@@ -1,0 +1,15 @@
+---
+- name: Install basic packages
+  become: yes
+  apt:
+    pkg:
+      - keepass2
+      - cifs-utils
+      - vim
+      - git
+
+- name: Remove unwanted packages
+  become: yes
+  apt:
+    name: nano
+    state: absent
