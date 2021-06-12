@@ -1,0 +1,14 @@
+---
+- name: Create mountpoint
+  file:
+    path: /home/mtenda/share
+    state: directory
+
+- name: Mount the NAS via CIFS
+  become: yes
+  ansible.posix.mount:
+    src: //nas01.local/SHARE
+    path: /home/mtenda/share
+    opts: user={{ nas_username }},password={{ nas_password }},vers=1.0,uid=1000,gid=1000
+    state: mounted
+    fstype: cifs
