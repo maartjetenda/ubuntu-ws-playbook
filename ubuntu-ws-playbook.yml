@@ -1,4 +1,10 @@
 ---
 - hosts: localhost
+  vars_prompt:
+    - name: nas_username
+      prompt: Enter the NAS username
+    - name: nas_password
+      prompt: Enter the NAS password
   roles:
     - basic
+    - mounts
