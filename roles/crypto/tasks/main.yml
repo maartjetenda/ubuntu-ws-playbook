@@ -6,6 +6,6 @@
 
 - name: Install Trezor
   get_url:
-    url: - https://suite.trezor.io/web/static/desktop/Trezor-Suite-21.6.1-linux-x86_64.AppImage
-    dest: /home/mtenda/Trezor-Suite.AppImage
+    url: https://suite.trezor.io/web/static/desktop/Trezor-Suite-21.6.1-linux-x86_64.AppImage
+    dest: /home/{{ lookup('env','USER') }}/bin/Trezor-Suite.AppImage
     mode: '0755'

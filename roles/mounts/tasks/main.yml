@@ -8,7 +8,7 @@
   become: yes
   ansible.posix.mount:
     src: //nas01.local/SHARE
-    path: /home/mtenda/share
+    path: /home/{{ lookup('env','USER') }}/share
     opts: user={{ nas_username }},password={{ nas_password }},vers=1.0,uid=1000,gid=1000
     state: mounted
     fstype: cifs
