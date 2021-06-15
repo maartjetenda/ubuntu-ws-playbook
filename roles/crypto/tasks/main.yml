@@ -1,0 +1,11 @@
+---
+- name: Install Trezor bridge
+  become: yes
+  apt:
+    deb: https://wallet.trezor.io/data/bridge/2.0.27/trezor-bridge_2.0.27_amd64.deb
+
+- name: Install Trezor
+  get_url:
+    url: - https://suite.trezor.io/web/static/desktop/Trezor-Suite-21.6.1-linux-x86_64.AppImage
+    dest: /home/mtenda/Trezor-Suite.AppImage
+    mode: '0755'
