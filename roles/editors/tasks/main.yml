@@ -1,0 +1,17 @@
+---
+- name: Install Visual Studio Code
+  snap:
+    name: code
+    classic: yes
+
+- name: Install VSCode extensions
+  ansible.builtin.shell: code --install-extension "{{ item }}"
+  loop:
+    - eamodio.gitlens
+    - ms-vscode.PowerShell
+    - puppet.puppet-vscode
+    - rebornix.Ruby
+    - zbr.vscode-ansible
+    - korekontrol.saltstack
+    - 4ops.terraform
+    - redhat.vscode-yaml
